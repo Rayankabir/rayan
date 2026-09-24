@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rayan Kabir — Creative Visualizer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mea+Culpa&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1526ff;--yellow:#ffc81a;--bg:#e8e9ee;--ink:#14151c;--mute:#5d6072;--gl1:rgba(255,255,255,.6);--gl2:rgba(255,255,255,.16);--gb:rgba(255,255,255,.75);--sh:rgba(21,38,255,.16);--grid:rgba(20,21,60,.07);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171b30;--ink:#f1f2f8;--mute:#9a9db2;--gl1:rgba(54,60,116,.55);--gl2:rgba(30,34,76,.28);--gb:rgba(255,255,255,.16);--sh:rgba(0,0,0,.5);--grid:rgba(120,130,255,.09)}}
+:root[data-theme="dark"]{--bg:#171b30;--ink:#f1f2f8;--mute:#9a9db2;--gl1:rgba(54,60,116,.55);--gl2:rgba(30,34,76,.28);--gb:rgba(255,255,255,.16);--sh:rgba(0,0,0,.5);--grid:rgba(120,130,255,.09)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth;height:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background-color:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;overflow-x:hidden;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:38px 38px}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px 400px at 85% 10%,rgba(255,200,26,.35),transparent 70%),radial-gradient(700px 500px at 5% 60%,rgba(21,38,255,.22),transparent 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+.glass{background:linear-gradient(135deg,var(--gl1),var(--gl2));-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);border:1px solid var(--gb);box-shadow:0 12px 32px var(--sh),inset 0 1px 0 var(--gb);border-radius:22px}
+.script{font-family:'Mea Culpa',cursive;font-weight:400}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;margin:0;letter-spacing:.02em}
+.wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+section{padding:70px 0}
+.sec-h{font-size:clamp(44px,8vw,84px);line-height:.9;margin-bottom:34px;position:relative}
+.sec-h .script{color:var(--blue);font-size:.8em;display:block;margin-bottom:-.25em}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;margin:12px auto 0;max-width:1150px;width:calc(100% - 24px);display:flex;align-items:center;gap:10px;padding:8px 10px 8px 16px;border-radius:999px}
+nav .logo{font-family:'Bebas Neue';font-size:22px;white-space:nowrap;color:var(--blue)}
+nav .links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav .links::-webkit-scrollbar{display:none}
+nav .links a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap}
+nav .links a:hover{background:var(--blue);color:#fff}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:82vh;position:relative}
+.hero .script{color:var(--blue);font-size:clamp(56px,9vw,104px);line-height:.8;display:block;margin-bottom:-6px}
+.hero h1{font-size:clamp(64px,12vw,150px);line-height:.85}
+.hero p{max-width:440px;color:var(--mute);font-size:18px;line-height:1.5}
+.hero p b{color:var(--blue);font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{padding:14px 26px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn.b{background:var(--blue);color:#fff}.btn.o{background:var(--ink);color:var(--bg)}
+.pic{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto;width:100%}
+.pic .disc{position:absolute;inset:6% 6% 0;background:var(--yellow);border-radius:50%}
+.pic .me{position:absolute;inset:0;display:grid;place-items:end center;overflow:hidden;border-radius:0 0 50% 50%}
+.pic .me img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pic .me span{align-self:center;font-size:14px;color:var(--ink);opacity:.6;text-align:center;border:2px dashed currentColor;border-radius:16px;padding:14px 20px}
+.float{position:absolute;padding:10px;animation:fl 6s ease-in-out infinite}
+.float .ph{width:120px}
+.f1{left:-4%;top:6%}.f2{right:-2%;bottom:6%;animation-delay:-3s}.f2 .ph{width:96px}
+.fi{position:absolute;width:38px;height:38px;color:var(--blue);animation:fl 7s ease-in-out infinite;opacity:.85}
+@keyframes fl{50%{transform:translateY(-14px) rotate(3deg)}}
+.marq{overflow:hidden;background:var(--blue);color:#fff;padding:12px 0;transform:rotate(-1.2deg);margin:0 -10px}
+.marq div{display:flex;gap:26px;width:max-content;animation:mq 30s linear infinite;font-family:'Bebas Neue';font-size:24px;letter-spacing:.06em}
+.marq i{color:var(--yellow);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* placeholders + cards */
+.ph{display:grid;place-items:center;width:100%;border-radius:14px;background:repeating-linear-gradient(45deg,rgba(21,38,255,.08) 0 10px,rgba(255,200,26,.14) 10px 20px);color:var(--mute);font-size:13px;text-align:center;padding:8px}
+.card img,.card .ph{border-radius:14px;width:100%;object-fit:cover;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{padding:12px;position:relative;transition:transform .25s}
+.card:hover{transform:translateY(-6px) rotate(-.5deg)}
+.card .num{position:absolute;top:-6px;right:14px;font-family:'Bebas Neue';font-size:64px;color:var(--yellow);text-shadow:0 2px 0 rgba(0,0,0,.1);z-index:2}
+.card h3{font-size:30px;padding:12px 6px 4px;line-height:1}
+.card h3 em{font-family:'Mea Culpa',cursive;font-style:normal;color:var(--blue);font-size:1.3em;margin-left:6px}
+.card.more{display:grid;place-items:center;min-height:200px;text-align:center;color:var(--mute);border-style:dashed}
+.card.more:hover{transform:none}
+/* about, skills */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pane{padding:28px}
+.pane p{line-height:1.7;color:var(--mute);font-size:17px}
+.stats{display:flex;gap:26px;margin-top:20px;flex-wrap:wrap}
+.stats b{font-family:'Bebas Neue';font-size:54px;color:var(--blue);display:block;line-height:1}
+.stats span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tool{display:flex;gap:12px;align-items:center}
+.tool i{width:52px;height:52px;border-radius:14px;background:#0d1b3a;color:var(--yellow);display:grid;place-items:center;font:700 20px 'Outfit';font-style:normal}
+.tool b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.dots{letter-spacing:3px;color:var(--blue)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pills span{border:1.5px solid var(--ink);border-radius:999px;padding:7px 16px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500}
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.ct{display:flex;gap:14px;align-items:center;padding:16px 18px}
+.ct i{width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:600 15px 'Outfit';font-style:normal;flex:none}
+.ct small{display:block;color:var(--mute);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.ct.off{opacity:.55;border-style:dashed}
+footer{text-align:center;padding:30px 0 50px;color:var(--mute);font-size:14px}
+/* category page */
+.back{display:inline-block;padding:10px 20px;margin-bottom:26px;font-weight:500}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--min,300px),1fr));gap:18px}
+.tile{padding:10px;overflow:hidden}
+.tile img{width:100%;display:block;border-radius:14px}
+.note{color:var(--mute);margin:-10px 0 24px}
+@media(max-width:800px){.hero,.about{grid-template-columns:1fr}.hero{min-height:0;padding-top:30px}.tools{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z" fill="currentColor"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l5 8-5 12-5-12z"/><circle cx="12" cy="12" r="1.5"/><path d="M12 10.5V2"/></symbol>
+<symbol id="i-bez" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 19C8 3 16 21 21 5"/><rect x="1.5" y="17.5" width="3" height="3"/><rect x="19.5" y="3.5" width="3" height="3"/></symbol>
+<symbol id="i-lay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+</defs></svg>
+
+<nav class="glass"><a class="logo" href="#/">Rayan Kabir</a><div class="links" id="links"></div></nav>
+<main id="app"></main>
+<footer>© 2026 Rayan Kabir · Creative Visualizer</footer>
+
+<script>
+/* ============ EDIT ME: everything you'll change lives in this block ============ */
+const ME = { name:'Rayan Kabir', role:'Creative Visualizer', tagline:'I Turn Ideas Into Visual Impact',
+  sub:'Designing scroll-stopping content <b>that connects, converts,</b> and communicates.',
+  photo:'',   // e.g. 'images/me.png'
+  about:'Hello! I\'m Rayan, a graphic designer who turns ideas into scroll-stopping visuals. (Write your own story here.)',
+  stats:[['0+','Clients'],['0+','Years'],['0+','Projects']] };
+
+// Work categories. cover = cover photo path. ratio = shape of the designs. subs = optional sub-categories.
+const CATS = [
+ { id:'thumbnail', title:'Thumbnail', sub:'Design', ratio:'16/9', cover:'', subs:[
+   {id:'documentary',title:'Documentary',cover:'image/tesla.png'},{id:'gaming',title:'Gaming',cover:''},{id:'irl',title:'IRL',cover:''},{id:'travel',title:'Travel',cover:''},
+   {id:'education',title:'Education',cover:''},{id:'tech',title:'Tech',cover:''},{id:'make-money-online',title:'Make Money Online',cover:''}]},
+ { id:'ecommerce', title:'E-commerce', sub:'Post', ratio:'4/5', cover:'' },
+ { id:'poster', title:'Poster', sub:'Design', ratio:'4/5', cover:'' },
+ { id:'realestate', title:'Real Estate', sub:'Poster', ratio:'4/5', cover:'' },
+ // To add a new category, copy one line above, change id/title, done.
+];
+
+// Your designs. One line per design. sub is only used for Thumbnail.
+const WORKS = [
+ // { cat:'poster', img:'images/poster-01.jpg' },
+ { cat:'thumbnail', sub:'documentary', img:'image/tesla.png' },
+ { cat:'thumbnail', sub:'documentary', img:'image/elon.png' },
+ { cat:'thumbnail', sub:'documentary', img:'image/docu thumbnail 1.png' },
+ { cat:'thumbnail', sub:'gaming', img:'image/cs2.jpg' },
+ { cat:'thumbnail', sub:'gaming', img:'image/rv yet.png' },
+ { cat:'thumbnail', sub:'make-money-online', img:'image/podcast thumbnail.jpg' },
+ // { cat:'thumbnail', sub:'travel', img:'images/thumb-travel-01.jpg' },
+];
+
+// Contact details. Fill the quotes; empty ones show as "coming soon".
+const CONTACT = [
+ ['Email','@','','mailto:','yourname@gmail.com'],['Phone','☎','','tel:','+880 1XXX-XXXXXX'],
+ ['WhatsApp','WA','','','wa.me link'],['Behance','Bē','','','behance.net/you'],
+ ['Instagram','Ig','','','@yourhandle'],['LinkedIn','in','','','linkedin.com/in/you'],['Facebook','f','','','facebook.com/you'] ];
+
+const TOOLS = [['Ai','Illustrator',4],['Ps','Photoshop',5],['Ae','After Effects',3],['Lr','Lightroom',3],['Id','InDesign',3],['Fi','Figma',3]];
+const SKILLS = ['Typography','Creativity','Layout','Thumbnail Psychology','Time Management','Adaptive'];
+/* ================================================================================ */
+
+const $ = s => document.querySelector(s);
+const ph = (r,t) => `<div class="ph" style="aspect-ratio:${r}">${t}</div>`;
+const pic = (src,r,t) => src ? `<img src="${src}" alt="${t}" style="aspect-ratio:${r}">` : ph(r,'Cover photo goes here');
+const dots = n => '●'.repeat(n)+'○'.repeat(5-n);
+
+$('#links').innerHTML = CATS.map(c=>`<a href="#/work/${c.id}">${c.title}</a>`).join('') +
+  ['about','skills','contact'].map(s=>`<a href="#/home/${s}">${s[0].toUpperCase()+s.slice(1)}</a>`).join('');
+
+function home(){
+ const strip = `<span>Portfolio</span><i>✦</i><span>2026</span><i>✦</i><span>${ME.name}</span><i>✦</i>`.repeat(6);
+ return `
+<div class="wrap"><section class="hero" id="top">
+ <div><span class="script">Creative</span><h1>Visualizer</h1>
+  <h2 style="font-size:clamp(24px,4vw,38px);margin:14px 0 8px">${ME.tagline}</h2><p>${ME.sub}</p>
+  <div class="btns"><a class="btn b" href="#/home/work">View Work</a><a class="btn o" href="#/home/contact">Hire Me</a></div></div>
+ <div class="pic"><div class="disc"></div>
+  <div class="me">${ME.photo?`<img src="${ME.photo}" alt="${ME.name}">`:'<span>Your photo<br>goes here</span>'}</div>
+  <div class="float glass f1">${ph('16/9','Thumbnail')}</div><div class="float glass f2">${ph('4/5','Poster')}</div>
+  <svg class="fi" style="top:-2%;right:8%"><use href="#i-pen"/></svg><svg class="fi" style="bottom:20%;left:-6%;animation-delay:-2s"><use href="#i-bez"/></svg>
+  <svg class="fi" style="top:46%;right:-6%;animation-delay:-4s;color:var(--yellow)"><use href="#i-spark"/></svg><svg class="fi" style="bottom:-4%;left:34%;animation-delay:-1s"><use href="#i-lay"/></svg></div>
+</section></div>
+<div class="marq"><div>${strip}${strip}</div></div>
+
+<div class="wrap"><section id="work"><h2 class="sec-h"><span class="script">Table of</span>Contents</h2>
+ <div class="grid">${CATS.map((c,i)=>`<a class="card glass" href="#/work/${c.id}"><span class="num">0${i+1}</span>${pic(c.cover,'4/3',c.title)}<h3>${c.title}<em>${c.sub}</em></h3></a>`).join('')}
+ <div class="card glass more"><p>+ More categories<br>coming soon</p></div></div></section>
+
+<section id="about"><h2 class="sec-h"><span class="script">Hello,</span>About Me</h2>
+ <div class="about"><div class="pane glass"><p>${ME.about}</p><div class="stats">${ME.stats.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div></div>
+ <div class="pane glass" id="skills"><h2 style="font-size:40px;margin-bottom:18px">Design Softwares</h2>
+  <div class="tools">${TOOLS.map(t=>`<div class="tool"><i>${t[0]}</i><div><b>${t[1]}</b><span class="dots">${dots(t[2])}</span></div></div>`).join('')}</div>
+  <div class="pills">${SKILLS.map(s=>`<span>${s}</span>`).join('')}</div></div></div></section>
+
+<section id="contact"><h2 class="sec-h"><span class="script">Let's</span>Work Together</h2>
+ <div class="contact">${CONTACT.map(c=>{const inner=`<i>${c[1]}</i><div><small>${c[0]}</small>${c[2]||c[4]}</div>`;
+  return c[2]?`<a class="ct glass" href="${c[3]+c[2]}" target="_blank" rel="noopener">${inner}</a>`:`<div class="ct glass off">${inner}</div>`}).join('')}</div></section></div>`;
+}
+
+function work(id,sub){
+ const c = CATS.find(x=>x.id===id); if(!c) return home();
+ const s = sub && c.subs && c.subs.find(x=>x.id===sub);
+ const title = s ? s.title : c.title, small = s ? c.title : c.sub;
+ let body;
+ if(c.subs && !s){
+  body = `<div class="grid">${c.subs.map(x=>`<a class="card glass" href="#/work/${c.id}/${x.id}">${pic(x.cover,'16/9',x.title)}<h3>${x.title}</h3></a>`).join('')}
+   <div class="card glass more"><p>+ More types<br>coming soon</p></div></div>`;
+ } else {
+  const list = WORKS.filter(w=>w.cat===id && (!s || w.sub===sub));
+  const min = c.ratio==='16/9' ? 340 : 240;
+  body = `<div class="tiles" style="--min:${min}px">${list.length ? list.map(w=>`<div class="tile glass"><img src="${w.img}" alt="${title}" loading="lazy"></div>`).join('')
+    : Array.from({length:6},(_,i)=>`<div class="tile glass">${ph(c.ratio,'Design '+(i+1)+' goes here')}</div>`).join('')}</div>`;
+ }
+ return `<div class="wrap"><section><a class="back glass" href="${s?'#/work/'+id:'#/home/work'}">← Back</a>
+  <h2 class="sec-h"><span class="script">${small}</span>${title}</h2>${body}</section></div>`;
+}
+
+function route(){
+ const p = location.hash.replace(/^#\/?/,'').split('/');
+ $('#app').innerHTML = p[0]==='work' ? work(p[1],p[2]) : home();
+ if(p[0]==='home' && p[1]){ const el=document.getElementById(p[1]); if(el) el.scrollIntoView(); } else scrollTo(0,0);
+}
+addEventListener('hashchange',route); route();
+</script>
+</body>
+</html>
